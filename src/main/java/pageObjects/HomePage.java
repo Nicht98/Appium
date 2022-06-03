@@ -14,45 +14,25 @@ public class HomePage extends Page {
 
     private static final Logger LOG = LogManager.getLogger(HomePage.class);
 
-    @AndroidFindBy (accessibility = "Accessibility")
-    private MobileElement btn_accessibility;
 
-    @AndroidFindBy (id = "android:id/content")
-    private MobileElement homeDisp;
 
-    @AndroidFindBy (id = "android:id/content")
-    private MobileElement secondScreenDisp;
-
-    @AndroidFindBy (id = "com.kikuu:id/tab_share_img")
-    MobileElement tab_shop_img;
+    @AndroidFindBy (id ="com.kikuu:id/tab_home_img")
+    MobileElement home_tab_img;
 
 
 
 
     public boolean isHomeDisplayed() {
-       // shortWaitUntil(ExpectedConditions.visibilityOfAllElements());
-        LOG.info(tab_shop_img.isDisplayed());
-        return tab_shop_img.isDisplayed();
-    }
-
-    public void clickBtnAcces (){
-        click(btn_accessibility);
-    }
-
-    public boolean isPagedispalyed(){
-        return secondScreenDisp.isDisplayed();
+       shortWaitUntil(ExpectedConditions.visibilityOfAllElements());
+        //LOG.info(tab_shop_img.isDisplayed());
+        return home_tab_img.isDisplayed();
     }
 
 
 
 
 
-
-
-
-
-
-  /*   @AndroidFindBy(id = "com.pictime.nocibe:id/catalog_navigation")
+/*   @AndroidFindBy(id = "com.pictime.nocibe:id/catalog_navigation")
     private MobileElement categoryView;
 
     @AndroidFindBy(id = "com.pictime.nocibe:id/item_home_top_category")

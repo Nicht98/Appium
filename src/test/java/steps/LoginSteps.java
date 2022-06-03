@@ -8,6 +8,8 @@ import pageObjects.AccessInitializationPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
+import static org.testng.Assert.assertTrue;
+
 public class LoginSteps {
 
     AccessInitializationPage accesInit;
@@ -42,6 +44,7 @@ public class LoginSteps {
 
     @Then("the user is redirect to HomePage")
     public void theUserIsRedirectToHomePage() {
-       homePage.isHomeDisplayed();
+        accesInit.allowPermission();
+       assertTrue(homePage.isHomeDisplayed()) ;
     }
 }

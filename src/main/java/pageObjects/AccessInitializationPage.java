@@ -21,6 +21,9 @@ public class AccessInitializationPage extends Page {
     @AndroidFindBy(id = "com.kikuu:id/join_kikuu_img")
     private MobileElement first_logos;
 
+    @AndroidFindBy(id = "com.android.packageinstaller:id/permission_allow_button")
+    MobileElement allowLocalisationPerm;
+
 
     public void accept_permission(){
         click(accept_btn);
@@ -42,6 +45,10 @@ public class AccessInitializationPage extends Page {
     public boolean permission_message(){
         loadingWaitUntil(ExpectedConditions.visibilityOfAllElements(permission_txt));
         return permission_txt.isDisplayed();
+    }
+    public void allowPermission() {
+        shortWaitUntil(ExpectedConditions.visibilityOfAllElements());
+        click(allowLocalisationPerm);
     }
 
 }
