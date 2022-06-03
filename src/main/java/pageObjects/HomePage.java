@@ -23,13 +23,16 @@ public class HomePage extends Page {
     @AndroidFindBy (id = "android:id/content")
     private MobileElement secondScreenDisp;
 
+    @AndroidFindBy (id = "com.kikuu:id/tab_share_img")
+    MobileElement tab_shop_img;
+
 
 
 
     public boolean isHomeDisplayed() {
        // shortWaitUntil(ExpectedConditions.visibilityOfAllElements());
-        LOG.info(homeDisp.isDisplayed());
-        return homeDisp.isDisplayed();
+        LOG.info(tab_shop_img.isDisplayed());
+        return tab_shop_img.isDisplayed();
     }
 
     public void clickBtnAcces (){
